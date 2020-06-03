@@ -1,7 +1,14 @@
-N = 69
+def fib2Recursive(x):
+    if x == 0:
+        return 0
+    elif x == 1:
+        return 1 + fib2Recursive(x-1)
+    return fib2Recursive(x-2) + fib2Recursive(x-1)
+
+N = 22
 DP = [0 for col in range(N)]
 
-DP[0] = 0
+DP[0] = 1
 DP[1] = 1
 
 for x in range(2, N):
@@ -16,3 +23,5 @@ care of the base cases.
 You also have to know what element in your array or matrix is your answer to return.
 Lastly, the most important thing is the formula that relates your current subproblem to the previous subproblems.
 '''
+
+print(fib2Recursive(22))

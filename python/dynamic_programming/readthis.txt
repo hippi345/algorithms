@@ -1,0 +1,6 @@
+What are requirements for Dynamic Programming?
+
+1) Optimal Substructure - if the optimal solution to the complete problem can be found with optimal solutions to
+sub-problems with a recurrence relation
+2) Overlapping sub-problems - if there is a need to solve the sub-problems multiple times to reach the optimal
+overall solution
