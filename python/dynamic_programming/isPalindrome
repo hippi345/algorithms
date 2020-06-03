@@ -1,0 +1,17 @@
+str1 = "dabad"
+
+
+def isPalindrome(str1):
+    i = 0
+    j = len(str1) - 1
+
+    while i < j:
+        if (str1[i] != str1[j]):
+            return False
+        else:
+            i = i + 1
+            j = j - 1
+    return True
+
+print(isPalindrome(str1))
+print(isPalindrome("joel?"))
