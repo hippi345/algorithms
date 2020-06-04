@@ -62,3 +62,28 @@ for y in range(0, h):
             elif x == 2:
                 print("House " + str(y) + " painted: Blue")
 print("Total Cost: " + str(sumCost))
+
+RED = 0
+BLUE = 1
+GREEN = 2
+
+
+def min_cost_dp(costs):
+    n = len(costs)
+    dp = [[0 for _ in range(0, 3)] for _ in range(0, n + 1)]
+    for i in range(1, n + 1):
+        dp[i][RED] = costs[i - 1][RED] + min(dp[i - 1][BLUE], dp[i - 1][GREEN])
+        dp[i][BLUE] = costs[i - 1][BLUE] + min(dp[i - 1][RED], dp[i - 1][GREEN])
+        dp[i][GREEN] = costs[i - 1][GREEN] + min(dp[i - 1][RED], dp[i - 1][BLUE])
+    return min(dp[n][RED], min(dp[n][BLUE], dp[n][GREEN]))
+
+
+'''
+The above way works a little differently by effectively working in O(N) time but it also assumes a very fixed scope.
+In other words, the algorithm knows how many houses there are and that there are 3 colors.
+In the case where these values are not fixed, I believe the solution is more complex (above) and also I have
+it as O(N^2).
+Thanks.
+'''
+
+print(min_cost_dp(cost))
