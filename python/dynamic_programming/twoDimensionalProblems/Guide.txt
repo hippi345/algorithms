@@ -1,0 +1,4 @@
+Key pointers to a 2D problem:
+1) Inputs consist of two strings or two arrays
+2) Involves processing input from both directions (front and back)
+3) Input is a two dimensional array
