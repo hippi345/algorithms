@@ -8,4 +8,4 @@ def stairsToHeaven(n):
     return ways[n]
 
 
-print(stairsToHeaven(6))
+print(stairsToHeaven(5))
