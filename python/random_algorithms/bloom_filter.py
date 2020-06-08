@@ -35,6 +35,10 @@ class BloomFilter(object):
         Add an item in the filter
         """
         digests = []
+        """
+        Hash count is the number of hash functions to run as well as the number of bits to assign to one in the bit
+        array. 
+        """
         for i in range(self.hash_count):
             # create digest for given item.
             # i work as seed to mmh3.hash() function
@@ -51,6 +55,9 @@ class BloomFilter(object):
         """
         for i in range(self.hash_count):
             digest = mmh3.hash(item, i) % self.size
+            """
+            We check against all the items to be true in order to return true, if any are zero then return false.
+            """
             if not self.bit_array[digest]:
                 # if any of bit is False then,its not present
                 # in filter
