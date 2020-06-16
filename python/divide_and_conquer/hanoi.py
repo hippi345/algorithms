@@ -6,7 +6,9 @@ class Tower:
 
     def __init__(self):
         self.counter = 0
-
+"""
+Runtime: O(2^N)
+"""
     def hanoi(self, n, a, c, b):
         if n == 1:
             self.counter += 1
