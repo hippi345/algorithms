@@ -64,12 +64,12 @@ def shortest_cycle(n: int) -> int:
                     # Push into the queue
                     q.append(child)
 
-                    # If it is already visited
+                # If it is already visited
                 elif par[x] != child and par[child] != x:
                     ans = min(ans, dist[x] +
                               dist[child] + 1)
 
-                    # If graph contains no cycle
+    # If graph contains no cycle
     if ans == INT_MAX:
         return -1
 
