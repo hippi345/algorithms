@@ -71,7 +71,7 @@ else:
     print("Element is not present in array")
 
 # Function call
-result = binary_search_recursive(arr, 0, len(arr)-1, x) 
+result = binary_search_recursive(arr, 0, len(arr)-1, x)
 
 if result != -1:
     print("Element is present at index", str(result))
